@@ -1,0 +1,56 @@
+goos: linux
+goarch: amd64
+pkg: github.com/swvitaliy/go-mergesort
+cpu: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+BenchmarkRunA1M_K8_Optimized-8                34          29709789 ns/op
+BenchmarkRunA1M_K8_Optimized-8                37          33117532 ns/op
+BenchmarkRunA1M_K8_Optimized-8                37          36365010 ns/op
+BenchmarkRunA1M_K8_Optimized-8                40          35723266 ns/op
+BenchmarkRunA1M_K8_Optimized-8                37          39289459 ns/op
+BenchmarkRunA1M_K8-8                          28          43501330 ns/op
+BenchmarkRunA1M_K8-8                          28          51196017 ns/op
+BenchmarkRunA1M_K8-8                          24          48647810 ns/op
+BenchmarkRunA1M_K8-8                          30          50961973 ns/op
+BenchmarkRunA1M_K8-8                          26          47227120 ns/op
+BenchmarkRunA100k_K8_Optimized-8             232           4941897 ns/op
+BenchmarkRunA100k_K8_Optimized-8             240           4917199 ns/op
+BenchmarkRunA100k_K8_Optimized-8             241           4900308 ns/op
+BenchmarkRunA100k_K8_Optimized-8             241           4971495 ns/op
+BenchmarkRunA100k_K8_Optimized-8             186           5983132 ns/op
+BenchmarkRunA100k_K8-8                       207           5145911 ns/op
+BenchmarkRunA100k_K8-8                       297           4486036 ns/op
+BenchmarkRunA100k_K8-8                       296           4279432 ns/op
+BenchmarkRunA100k_K8-8                       288           4136985 ns/op
+BenchmarkRunA100k_K8-8                       286           4126105 ns/op
+BenchmarkRunA1M_K3_Optimized-8                22          50375709 ns/op
+BenchmarkRunA1M_K3_Optimized-8                36          42695595 ns/op
+BenchmarkRunA1M_K3_Optimized-8                40          33282697 ns/op
+BenchmarkRunA1M_K3_Optimized-8                28          40848492 ns/op
+BenchmarkRunA1M_K3_Optimized-8                30          41165350 ns/op
+BenchmarkRunA1M_K3-8                          21          55622885 ns/op
+BenchmarkRunA1M_K3-8                          24          55555412 ns/op
+BenchmarkRunA1M_K3-8                          22          49040599 ns/op
+BenchmarkRunA1M_K3-8                          24          43155576 ns/op
+BenchmarkRunA1M_K3-8                          25          44298723 ns/op
+BenchmarkRunA100k_K3_Optimized-8             320           3786103 ns/op
+BenchmarkRunA100k_K3_Optimized-8             428           2783275 ns/op
+BenchmarkRunA100k_K3_Optimized-8             222           5002092 ns/op
+BenchmarkRunA100k_K3_Optimized-8             361           3292646 ns/op
+BenchmarkRunA100k_K3_Optimized-8             318           4317548 ns/op
+BenchmarkRunA100k_K3-8                       154           7370729 ns/op
+BenchmarkRunA100k_K3-8                       238           4513087 ns/op
+BenchmarkRunA100k_K3-8                       240           4554693 ns/op
+BenchmarkRunA100k_K3-8                       316           6013884 ns/op
+BenchmarkRunA100k_K3-8                       204           6054324 ns/op
+BenchmarkRunA100k_K0_Optimized-8             144           8115862 ns/op
+BenchmarkRunA100k_K0_Optimized-8             135           8191494 ns/op
+BenchmarkRunA100k_K0_Optimized-8             144           8105818 ns/op
+BenchmarkRunA100k_K0_Optimized-8             162           7843897 ns/op
+BenchmarkRunA100k_K0_Optimized-8             142           7954895 ns/op
+BenchmarkRunA100k_K0-8                       103          10670309 ns/op
+BenchmarkRunA100k_K0-8                       123          10543047 ns/op
+BenchmarkRunA100k_K0-8                       114          11008852 ns/op
+BenchmarkRunA100k_K0-8                       100          11110985 ns/op
+BenchmarkRunA100k_K0-8                       100          10676269 ns/op
+PASS
+ok      github.com/swvitaliy/go-mergesort       87.133s
