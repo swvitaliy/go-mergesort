@@ -61,12 +61,12 @@ func (ms *MergeSort) run(k int, a []int, i, j int, sort sortFn) {
 		wg := sync.WaitGroup{}
 		wg.Add(2)
 		go func() {
+			defer wg.Done()
 			ms.run(k-1, a, i, m, sort)
-			wg.Done()
 		}()
 		go func() {
+			defer wg.Done()
 			ms.run(k-1, a, m+1, j, sort)
-			wg.Done()
 		}()
 		wg.Wait()
 		merge(a, ms.b, i, m, j)
