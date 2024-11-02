@@ -18,20 +18,18 @@ var a100k []int
 var a1M []int
 
 func setup() {
-	a100k = make([]int, 100000, 100000)
+	a100k = make([]int, 100_000)
 	for i := 0; i < len(a100k); i++ {
-		a100k[i] = rand.Intn(100500)
+		a100k[i] = rand.Intn(100_500)
 	}
-	a1M = make([]int, 1000000, 1000000)
+	a1M = make([]int, 1_000_000)
 	for i := 0; i < len(a1M); i++ {
-		a1M[i] = rand.Intn(100500)
+		a1M[i] = rand.Intn(100_500)
 	}
 }
 
 func invalidateCPUCache(a []int) {
-	for i := 0; i < 1000; i++ {
-		a[rand.Intn(len(a))] = rand.Intn(100500)
-	}
+	a[rand.Intn(len(a))] = rand.Intn(100_500)
 }
 
 func tearDown() {
@@ -42,7 +40,7 @@ func tearDown() {
 // Benchmark with K=8 (number of goroutines = 2^k = 256)
 
 func BenchmarkRunA1M_K8_Optimized(e *testing.B) {
-	a := make([]int, len(a1M), len(a1M))
+	a := make([]int, len(a1M))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -53,7 +51,7 @@ func BenchmarkRunA1M_K8_Optimized(e *testing.B) {
 }
 
 func BenchmarkRunA1M_K8(e *testing.B) {
-	a := make([]int, len(a1M), len(a1M))
+	a := make([]int, len(a1M))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -64,7 +62,7 @@ func BenchmarkRunA1M_K8(e *testing.B) {
 }
 
 func BenchmarkRunA100k_K8_Optimized(e *testing.B) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -75,7 +73,7 @@ func BenchmarkRunA100k_K8_Optimized(e *testing.B) {
 }
 
 func TestRunA100k_K8(t *testing.T) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	copy(a, a100k)
@@ -85,7 +83,7 @@ func TestRunA100k_K8(t *testing.T) {
 }
 
 func BenchmarkRunA100k_K8(e *testing.B) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -99,7 +97,7 @@ func BenchmarkRunA100k_K8(e *testing.B) {
 // Benchmark with K=3 (number of goroutines = 2^k = 8)
 
 func BenchmarkRunA1M_K3_Optimized(e *testing.B) {
-	a := make([]int, len(a1M), len(a1M))
+	a := make([]int, len(a1M))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -110,7 +108,7 @@ func BenchmarkRunA1M_K3_Optimized(e *testing.B) {
 }
 
 func BenchmarkRunA1M_K3(e *testing.B) {
-	a := make([]int, len(a1M), len(a1M))
+	a := make([]int, len(a1M))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -121,7 +119,7 @@ func BenchmarkRunA1M_K3(e *testing.B) {
 }
 
 func TestRunA100k_K3_Optimized(t *testing.T) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	copy(a, a100k)
@@ -131,7 +129,7 @@ func TestRunA100k_K3_Optimized(t *testing.T) {
 }
 
 func BenchmarkRunA100k_K3_Optimized(e *testing.B) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -142,7 +140,7 @@ func BenchmarkRunA100k_K3_Optimized(e *testing.B) {
 }
 
 func BenchmarkRunA100k_K3(e *testing.B) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -156,7 +154,7 @@ func BenchmarkRunA100k_K3(e *testing.B) {
 // Benchmark with K=0
 
 func TestRunA100k_K0_Optimized(t *testing.T) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	copy(a, a100k)
@@ -166,7 +164,7 @@ func TestRunA100k_K0_Optimized(t *testing.T) {
 }
 
 func BenchmarkRunA100k_K0_Optimized(e *testing.B) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
@@ -177,7 +175,7 @@ func BenchmarkRunA100k_K0_Optimized(e *testing.B) {
 }
 
 func BenchmarkRunA100k_K0(e *testing.B) {
-	a := make([]int, len(a100k), len(a100k))
+	a := make([]int, len(a100k))
 	n := len(a)
 	ms := NewMergeSort(n)
 	for i := 0; i < e.N; i++ {
