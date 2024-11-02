@@ -2,10 +2,22 @@ goos: linux
 goarch: amd64
 pkg: github.com/swvitaliy/go-mergesort/slice_ptr
 cpu: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
-BenchmarkInt64ValuesV1-8        52059691                20.66 ns/op
-BenchmarkInt64ValuesV2-8        354237693               16.51 ns/op
-BenchmarkProps8PointersV1-8     21069584                58.60 ns/op
-BenchmarkProps8PointersV2-8     36641719                47.46 ns/op
+BenchmarkInt64ValuesV1/input_size_1000-8                   76567             15581 ns/op
+BenchmarkInt64ValuesV1/input_size_10000-8                   7045            163168 ns/op
+BenchmarkInt64ValuesV1/input_size_100000-8                   654           1669896 ns/op
+BenchmarkInt64ValuesV1/input_size_1000000-8                   66          16223396 ns/op
+BenchmarkInt64ValuesV2/input_size_1000-8                  337983              3468 ns/op
+BenchmarkInt64ValuesV2/input_size_10000-8                  33100             35550 ns/op
+BenchmarkInt64ValuesV2/input_size_100000-8                  2671            431725 ns/op
+BenchmarkInt64ValuesV2/input_size_1000000-8                  100          11691713 ns/op
+BenchmarkProps8PointersV1/input_size_1000-8                24590             48328 ns/op
+BenchmarkProps8PointersV1/input_size_10000-8                2152            555140 ns/op
+BenchmarkProps8PointersV1/input_size_100000-8                144           8202095 ns/op
+BenchmarkProps8PointersV1/input_size_1000000-8                18          65748780 ns/op
+BenchmarkProps8PointersV2/input_size_1000-8                65800             20892 ns/op
+BenchmarkProps8PointersV2/input_size_10000-8                3507            349956 ns/op
+BenchmarkProps8PointersV2/input_size_100000-8                217           5354765 ns/op
+BenchmarkProps8PointersV2/input_size_1000000-8                27          41346870 ns/op
 PASS
-ok      github.com/swvitaliy/go-mergesort/slice_ptr     12.928s
+ok      github.com/swvitaliy/go-mergesort/slice_ptr     24.302s
 
