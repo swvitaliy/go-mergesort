@@ -1,0 +1,32 @@
+No gc
+
+goos: linux
+goarch: amd64
+pkg: github.com/swvitaliy/go-mergesort/weak_cache
+cpu: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+BenchmarkCacheRW1/input_size_10000-8                1923            690562 ns/op
+BenchmarkCacheRW1/input_size_50000-8                 285           4822269 ns/op
+BenchmarkCacheRW1/input_size_250000-8                 21          50887898 ns/op
+BenchmarkCacheRW2/input_size_10000-8                1771            629438 ns/op
+BenchmarkCacheRW2/input_size_50000-8                 272           4086071 ns/op
+BenchmarkCacheRW2/input_size_250000-8                 28          41942354 ns/op
+BenchmarkSyncCacheRW1/input_size_10000-8             469           2182427 ns/op
+BenchmarkSyncCacheRW1/input_size_50000-8              82          14099808 ns/op
+BenchmarkSyncCacheRW1/input_size_250000-8              9         112278091 ns/op
+BenchmarkSyncCacheRW2/input_size_10000-8             574           2979012 ns/op
+BenchmarkSyncCacheRW2/input_size_50000-8              84          16530458 ns/op
+BenchmarkSyncCacheRW2/input_size_250000-8             13          86749062 ns/op
+BenchmarkSyncWeakCacheRW1/input_size_10000-8         100          11036015 ns/op
+BenchmarkSyncWeakCacheRW1/input_size_50000-8          18          58378605 ns/op
+BenchmarkSyncWeakCacheRW1/input_size_250000-8                  3         375610701 ns/op
+BenchmarkSyncWeakCacheRW2/input_size_10000-8                 117           9009588 ns/op
+BenchmarkSyncWeakCacheRW2/input_size_50000-8                  18          68836456 ns/op
+BenchmarkSyncWeakCacheRW2/input_size_250000-8                  4         303963270 ns/op
+BenchmarkWeakCacheRW1/input_size_10000-8                     114          10551268 ns/op
+BenchmarkWeakCacheRW1/input_size_50000-8                      32          40170853 ns/op
+BenchmarkWeakCacheRW1/input_size_250000-8                      4         276948617 ns/op
+BenchmarkWeakCacheRW2/input_size_10000-8                     127           8323556 ns/op
+BenchmarkWeakCacheRW2/input_size_50000-8                      26          40101002 ns/op
+BenchmarkWeakCacheRW2/input_size_250000-8                      5         221413708 ns/op
+PASS
+ok      github.com/swvitaliy/go-mergesort/weak_cache    58.021s
